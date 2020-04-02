@@ -32,8 +32,8 @@ binding.pry
   end
 
 
-  get "/login" do
-    erb :login
+  get "/success" do
+    erb :success
   end
 
   post "/login" do
@@ -41,7 +41,7 @@ binding.pry
  
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect "/account"
+      redirect "/success"
     else
       redirect "/failure"
     end
