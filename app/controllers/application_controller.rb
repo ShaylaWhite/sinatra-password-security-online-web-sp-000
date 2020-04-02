@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
   end
 
 	get '/login' do
-    @user = User.find(session[:user_id])
+    user = User.find(session[:user_id])
     erb :login
   end
 
