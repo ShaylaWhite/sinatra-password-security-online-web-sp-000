@@ -27,9 +27,6 @@ class ApplicationController < Sinatra::Base
 
 
 	get '/login' do
-	  binding.pry
-    user = User.find(session[:user_id])
-    
     erb :login
   end
 
