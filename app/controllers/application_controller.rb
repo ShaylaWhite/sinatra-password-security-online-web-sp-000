@@ -8,18 +8,18 @@ class ApplicationController < Sinatra::Base
 		set :session_secret, "password_security"
 	end
 
-	get "/" do
-		erb :index
-	end
+	 get "/" do
+    erb :index
+  end
 
-	get "/signup" do
-		erb :login
-	end
+  get "/signup" do
+    erb :signup
+  end
 
-	post "/signup" do
-	user = user.new(:username => params[:username], :password => params[:password])
+  post "/signup" do
+	user = User.new(:username => params[:username], :password => params[:password])
 
-	  if User.save && User[:username] != ""
+	  if user.save && user[:username] != ""
 	    redirect "/login"
     else
       redirect "/failure"
